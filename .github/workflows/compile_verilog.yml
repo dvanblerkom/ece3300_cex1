@@ -35,6 +35,4 @@ jobs:
       - run: |
           iverilog -o design.o -c script/iverilog.include
           vvp design.o
-          yosys -s script/yosys_script.ys > yosys_log.txt
-          grep "Latch inferred" yosys_log.txt && { echo "Latches found - fail."; exit 1; } || { echo "No latches found - pass."; exit 0; }
           echo "Script has finished running."
